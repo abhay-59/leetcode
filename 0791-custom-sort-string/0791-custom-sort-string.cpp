@@ -6,9 +6,8 @@ public:
         for(char i:s)mp[i]++;
         for(auto i:order){
             if(mp.find(i)!=mp.end()){
-                if(mp[i]==0)mp.erase(i);
-                while(mp[i]!=0){
-                ans.push_back(i);mp[i]--;}
+                ans.append(mp[i], i);
+                mp.erase(i);
             }
         }
         for(auto &it : mp){
