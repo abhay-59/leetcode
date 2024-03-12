@@ -12,32 +12,20 @@ public:
             for (int i = 0; i < n; ++i)
                 for (int j = 0; j < n; ++j)
                     dis[i][j] = min(dis[i][j], dis[i][k] + dis[k][j]);
-        int res = 0, smallest = n;
+        vector<int>v(n,0);
         for (int i = 0; i < n; i++) {
             int count = 0;
-            for (int j = 0; j < n; ++j)
+            for (int j = 0; j < n; ++j){
                 if (dis[i][j] <= distanceThreshold)
                     ++count;
-            if (count <= smallest) {
-                res = i;
-                smallest = count;
             }
+            v[i]=count;
         }
-        return res;
-        // vector<int>v(n,0);
-        // for (int i = 0; i < n; i++) {
-        //     int count = 0;
-        //     for (int j = 0; j < n; ++j){
-        //         if (dis[i][j] <= distanceThreshold)
-        //             ++count;
-        //     }
-        //     v[i]=count;
-        // }
-        // int mn=*min_element(v.begin(),v.end());
-        // int ans=-1;
-        // for(int i=0;i<n;i++){
-        //     if(v[i]==mn)ans=i;
-        // }
-        // return ans;
+        int mn=*min_element(v.begin(),v.end());
+        int ans=-1;
+        for(int i=0;i<n;i++){
+            if(v[i]==mn)ans=i;
+        }
+        return ans;
     }
 };
