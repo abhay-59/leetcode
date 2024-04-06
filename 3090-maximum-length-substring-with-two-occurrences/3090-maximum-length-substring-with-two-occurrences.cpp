@@ -2,7 +2,7 @@ class Solution {
 public:
     int maximumLengthSubstring(string s) {
         int n = s.size(), ans = 0, begin = 0, end = 0;
-        map<int, int> mp;
+        unordered_map<int, int> mp;
         while (end < n)
         {
             mp[s[end]]++;
