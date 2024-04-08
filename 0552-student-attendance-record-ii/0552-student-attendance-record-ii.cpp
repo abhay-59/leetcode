@@ -27,6 +27,7 @@ public:
         return dp[s][abs][late]=total;
     }
     int checkRecord(int n) {
+        ios_base::sync_with_stdio(false), cin.tie(NULL), cout.tie(NULL);
         vector<vector<vector<int>>>dp(n,vector<vector<int>>(2,vector<int>(3,-1)));
         return solve(0,n,0,0,dp);//start,end,abs,late
     }
