@@ -14,16 +14,16 @@ public:
     bool isLeafNode(TreeNode* node){
        if(node->left == NULL and node->right == NULL) return true;
        return false;
-   }
-    void bfs(TreeNode*root,int&sum){
-        //cout<<"YES"<<endl;
-        if(root==NULL)return;
+    }
+    int sumOfLeftLeaves(TreeNode* root) {
+        ios_base::sync_with_stdio(false), cin.tie(NULL), cout.tie(NULL);
+        int sum=0;
+        if(root==NULL)return 0;
         queue<TreeNode*>q;
         q.push(root);
         while(!q.empty()){
             int n=q.size();
             for(int i=0;i<n;i++){
-                //cout<<"YES"<<endl;
                 TreeNode* node=q.front();
                 q.pop();
                 if(node->left){
@@ -31,13 +31,8 @@ public:
                     q.push(node->left);
                 };
                 if(node->right)q.push(node->right);
-                //cout<<node->val<<endl;
             }
         }
-    }
-    int sumOfLeftLeaves(TreeNode* root) {
-        int sum=0;
-        bfs(root,sum);
         return  sum;
     }
 };
