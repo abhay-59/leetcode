@@ -18,6 +18,7 @@ public:
         return solve(root->right,sum)+solve(root->left,sum);
     }
     int sumNumbers(TreeNode* root) {
+        ios_base::sync_with_stdio(false), cin.tie(NULL), cout.tie(NULL);
         return solve(root,0);
     }
 };
