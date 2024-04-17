@@ -25,19 +25,15 @@ public:
         q.push(root);
         while(!q.empty()) {
             int n=q.size();
-            vector<Node*>vec;
             for(int i=0; i<n; i++) {                
                 auto cur = q.front();
-                q.pop();            
+                q.pop();
+                if(i==n-1)cur->next=NULL;
+                else cur->next=q.front();
                 if(cur -> left)                        
                     q.push(cur -> left);
                 if(cur->right)
                     q.push(cur -> right);  
-                vec.push_back(cur);
-            }
-            for(int i=0;i<vec.size();i++){
-                if(i==vec.size()-1)vec[i]->next=NULL;
-                else vec[i]->next=vec[i+1];
             }
         }
         
