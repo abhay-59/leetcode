@@ -19,6 +19,7 @@ public:
 class Solution {
 public:
     Node* connect(Node* root) {
+        ios_base::sync_with_stdio(false), cin.tie(NULL), cout.tie(NULL);
         if(!root) return NULL;
         queue<Node*> q;
         q.push(root);
