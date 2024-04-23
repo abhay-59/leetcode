@@ -8,7 +8,7 @@ public:
             if(mp[i])mp[i]--;
             if(mp[i]==0)mp.erase(i);
             int diff=target-i;
-            if(mp.find(diff)!=mp.end()){
+            if(mp.count(diff)){
                 x=i;
                 y=diff;
                 break;
