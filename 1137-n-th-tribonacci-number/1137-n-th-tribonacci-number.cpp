@@ -1,14 +1,17 @@
 class Solution {
 public:
-    //vector<int>dp(38,-1);
     int tribonacci(int n) {
-        vector<int>ans(n+3,0);
-        ans[0] = 0;
-        ans[1] = 1;
-        ans[2] = 1;
+        if(n==1 || n==2)return 1;
+        int first = 0;
+        int second = 1;
+        int third = 1;
+        int ans=0;
         for(int i = 3 ; i <= n ; i++){
-            ans[i] = ans[i-1] + ans[i-2] + ans[i-3] ;
+            ans = first + second + third;
+            first=second;
+            second=third;
+            third=ans;
         }
-        return ans[n];
+        return ans;
     }
 };
