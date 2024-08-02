@@ -5,7 +5,7 @@ public:
         for(auto i:nums){
             if(i==1)count++;
         }
-        if (count == 0 || count == n) return 0;
+        //if (count == 0 || count == n) return 0;
         vector<int>v,nums1=nums;
         int cur=0;
         for(int i=0;i<count;i++){
