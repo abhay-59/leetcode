@@ -1,6 +1,8 @@
 class Solution {
 public:
     vector<int> findXSum(vector<int>& nums, int k, int x) {
+        ios::sync_with_stdio(false);
+        cin.tie(nullptr);
         vector<int> ans;
         for(int i=0; i<=nums.size()-k; i++){
             unordered_map<int,int> mp;
