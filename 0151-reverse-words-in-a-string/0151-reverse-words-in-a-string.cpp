@@ -1,16 +1,8 @@
 class Solution {
 public:
-    vector<string> split(string str, char delimiter)
-    {
-        stringstream ss(str);
-        vector<string> res;
-        string token;
-        while (getline(ss, token, delimiter)) {
-            res.push_back(token);
-        }
-        return res;
-    }
     string reverseWords(string s) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
         stringstream ss(s);
         string word;
         vector<string> v;
